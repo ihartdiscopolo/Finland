@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Finsona</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="browser">
+            <div class="title-bar">
+                <span class="title-text">Finsona - HyperBrowser</span>
+                <div class="window-buttons">
+                    <button class="win-btn minimize">_</button>
+                    <button class="win-btn maximize">□</button>
+                    <button class="win-btn close">X</button>
+                </div>
+            </div>
+
+            <div class="tab-bar" id="tabBar">
+                <div class="tab active" data-page="1">home</div>
+                <div class="tab" data-page="2">about me</div>
+                <div class="tab" data-page="3">what I bring</div>
+                <div class="tab" data-page="4">extra</div>
+            </div>
+
+            <div class="address-bar">
+                <input
+                    type="text"
+                    value="https://www.domiswebsite.com"
+                    readonly
+                />
+            </div>
+
+            <div class="content">
+                <div class="inner-pane">
+                    <!-- PAGE 1 -->
+
+                    <div class="page visible" id="page1">
+                        <h1>Welcome to my Persona!</h1>
+                        <p>
+                            I made this small website to convince you why I
+                            think I'd be a great fit to join the group of 5 to
+                            Finland 2026! <br />
+                            I hope you enjoy!
+                        </p>
+                        <div class="carousel">
+                            <button class="arrow left"><-</button>
+                            <img
+                                id="carouselImage"
+                                src="https://www.visitfinland.com/dam/jcr:eeb6993e-1dd1-4dc9-a70c-2a204d0c678b/Finland_Rhea_Julia_Kivel%C3%A4_MG_1828_Finnish_flag.jpg"
+                            />
+                            <button class="arrow right">-></button>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 2-->
+
+                    <div class="page" id="page2">
+                        <div class="text-content">
+                            <h1>About me..</h1>
+                            <p>
+                                My name is Domi[nika] Debska, <br />
+                                I am 17. My hobbies are..
+                            </p>
+                            <ul>
+                                <li>
+                                    Playing Dungeons and Dragons with my
+                                    friends!
+                                </li>
+                                <li>^^ Spending time with them in general</li>
+                                <li>Playing videogames</li>
+                                <li>Building Lego</li>
+                                <li>Listening to music</li>
+                            </ul>
+                            <p>Words that others have used to describe me :</p>
+                            <ul>
+                                <li>Resilient and Determined</li>
+                                <li>Outgoing and Social</li>
+                                <li>Energetic and Positive</li>
+                                <li>Easy going and Kind</li>
+                            </ul>
+                        </div>
+
+                        <div class="image-collage">
+                            <img src="images/me.jpg" class="img-main" />
+                            <div class="bottom-row">
+                                <img
+                                    src="images/thumbnail_1000035338.jpg"
+                                    class="img-small"
+                                />
+                                <img
+                                    src="images/thumbnail_ebaf6c0f-1224-4b0f-84af-5c0e8732ba2e-1_all_5757.jpg"
+                                    class="img-small"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--- PAGE 3 --->
+
+                    <div class="page" id="page3">
+                        <div class="text-content">
+                            <h1>What I bring</h1>
+                            <p>These are the qualities I bring to Finland! :</p>
+                            <ul>
+                                <li>Creativity and problem-solving</li>
+                                <li>Team spirit and enthusiasm</li>
+                                <li>Curiosity and motivation to learn</li>
+                                <li>Both personality and professionalism</li>
+                                <li>(If necessary) A great English speaker</li>
+                            </ul>
+                            <p>
+                                I see this as an opportunity to learn, grow, and
+                                expand my skills as a developer. In a short
+                                time, I’ve already learned so much, and going to
+                                Finland would allow me to push myself even more,
+                                both personally and professionally!!
+                            </p>
+
+                            <a
+                                href="files/Motivationletter Finland!.pdf"
+                                target="_blank"
+                            >
+                                <button>MY MOTIVATION LETTER</button>
+                            </a>
+                        </div>
+
+                        <img
+                            src="https://i.pinimg.com/736x/50/90/a7/5090a75cc0101a042446320e4ba3e22a.jpg"
+                        />
+                    </div>
+
+                    <!---- PAGE 4 ---->
+
+                    <div class="page" id="page4">
+                        <div class="text-section">
+                            <h1>Extra</h1>
+                            <p>
+                                This was it! I had a lot of fun making this !!
+                                <br />I hope you take me into consideration :)
+                            </p>
+                            <a
+                                href="https://st1736424628.splsites.nl/"
+                                target="_blank"
+                            >
+                                <button>MY PORTFOLIO</button>
+                            </a>
+                        </div>
+                        <img
+                            src="https://media.discordapp.net/attachments/1278353976936632454/1433026908978937997/old-browser-interface-template-isolated-window-search-line-navigation-icons-toolbar-abstract-internet-page-ui-show-188726286.png?ex=6904834f&is=690331cf&hm=19fdab2134477470d8a7abfa27e99e1330b5ad5d13437db6ccd79766c2ab1f21&=&format=webp&quality=lossless&width=1000&height=750"
+                        />
+                        <p>
+                            ^ This was one of the many references for the site!
+                            ^
+                            <br />The main inspiration being windows xp !!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const tabs = document.querySelectorAll(".tab");
+            const pages = document.querySelectorAll(".page");
+
+            function switchTab(pageId) {
+                // Remove active from all tabs
+                tabs.forEach((t) => t.classList.remove("active"));
+                // Hide all pages
+                pages.forEach((p) => p.classList.remove("visible"));
+
+                // Activate clicked tab
+                document
+                    .querySelector(`.tab[data-page="${pageId}"]`)
+                    .classList.add("active");
+                // Show correct page
+                document
+                    .getElementById("page" + pageId)
+                    .classList.add("visible");
+            }
+
+            // Attach listeners
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    switchTab(tab.dataset.page);
+                });
+            });
+
+            // Default pageJ
+
+            switchTab("1");
+
+            const images = [
+                "https://www.visitfinland.com/dam/jcr:eeb6993e-1dd1-4dc9-a70c-2a204d0c678b/Finland_Rhea_Julia_Kivel%C3%A4_MG_1828_Finnish_flag.jpg",
+                "https://www.lapland.fi/uploads/2020/06/eb6cc8c2-northern-lights-aurora-borealis-yllas-lapland-finland-alexander-kuznetsov-all-about-lapland.jpg",
+                "https://starvacation.in/wp-content/uploads/2024/09/Best-Things-to-Do-in-Finland-scaled.webp",
+            ];
+
+            let currentIndex = 0;
+            const carouselImage = document.getElementById("carouselImage");
+            const leftArrow = document.querySelector(".arrow.left");
+            const rightArrow = document.querySelector(".arrow.right");
+
+            function updateImage() {
+                carouselImage.style.opacity = 0;
+                setTimeout(() => {
+                    carouselImage.src = images[currentIndex];
+                    carouselImage.style.opacity = 1;
+                }, 200);
+            }
+
+            leftArrow.addEventListener("click", () => {
+                currentIndex =
+                    (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+            });
+
+            rightArrow.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            });
+        </script>
+    </body>
+</html>
